@@ -1,0 +1,152 @@
+﻿@model MoviePenguin.Models.Movie
+@{
+    ViewBag.Title = "MovieDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (MoviePenguin.Models.Category)ViewBag.category;
+    var listMovieRelated = (List<MoviePenguin.Models.Movie>)ViewBag.listMovieRelated;
+    var listMovieNew1 = (List<MoviePenguin.Models.Movie>)ViewBag.listMovieNew1;
+    var movie = (MoviePenguin.Models.Movie)ViewBag.movie;
+    var listMovieNew = (List<MoviePenguin.Models.Movie>)ViewBag.listMovieNew;
+}
+
+<section class="movie-detail">
+    <div class="container">
+
+        <figure class="movie-detail-banner">
+
+            <img src="~/@movie.Image">
+
+        </figure>
+
+        <div class="movie-detail-content">
+
+            <p class="detail-subtitle">New Episodes</p>
+
+            <h1 class="h1 detail-title">
+                <strong>@movie.Name</strong>
+            </h1>
+
+            <div class="meta-wrapper">
+
+                <div class="badge-wrapper">
+                    <div class="badge badge-fill">@movie.Directors</div>
+                </div>
+                <div class="ganre-wrapper">
+                    <a href="#">@category.Name</a>
+                </div>
+
+                <div class="ganre-wrapper">
+                    <div class="badge badge-outline">@movie.Actor</div>
+                </div>
+                <div class="date-time">
+
+                    <div>
+                        <ion-icon name="calendar-outline"></ion-icon>
+
+                        <time datetime="2021">@movie.Year</time>
+                    </div>
+
+                    <div>
+                        <ion-icon name="time-outline"></ion-icon>
+
+                        <time datetime="PT115M">115 min</time>
+                    </div>          
+                </div>
+
+            </div>
+
+            <p class="storyline">
+                @movie.Description
+            </p>
+
+            <div class="details-actions">
+
+
+                <button class="btn btn-primary">
+                    <ion-icon name="play"></ion-icon>
+
+                    <span>Watch Now</span>
+                </button>
+
+            </div>
+        
+
+        </div>
+
+    </div>
+</section>
+
+<div class="single-page-agile-main">
+    <div class="container">
+        <!-- /w3l-medile-movies-grids -->
+        <div class="single-page-agile-info">
+            <!-- /movie-browse-agile -->
+            <div class="show-top-grids-w3lagile">
+                <div class="col-sm-8 single-left">
+                    <div class="song">
+                        <div class="slide-song">
+                            <marquee width="1150">You are Watching @movie.Name  - Wish you have a great time and happy moment with your Friends & Family </marquee>
+                        </div>
+                        <div class="video-grid-single-page-agileits">
+                            <video src="~/@Model.MovieLink" controls="controls" width="1150" height="500"> </video>
+                        </div>
+                    </div>
+                    <div class="all-comments">
+                        <h5>Like</h5>
+                        <div class="fb-like" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+
+
+    </div>
+    <!-- //w3l-latest-movies-grids -->
+</div>
+
+<section class="tv-series">
+    <div class="container">
+
+        <p class="section-subtitle">Best Movie </p>
+
+        <h2 class="h2 section-title">Top The Same Genre Movie</h2>
+
+        <ul class="movies-list">
+            @foreach (var m in listMovieRelated)
+            {
+               <li>
+                   <div class="movie-card">
+                       <a href="/Movie/MovieDetail/@m.MovieID">
+                           <figure class="card-banner">
+                               <img src="~/@m.Image" title="album-name" alt="The Northman movie poster">
+                           </figure>
+                       </a>
+                       <div class="title-wrapper">
+                           <a href="/Movie/MovieDetail/@m.MovieID">
+                               <h3 class="card-title">@m.Name</h3>
+                           </a>
+                           <p>@m.Year</p>
+                       </div>
+                       <div class="card-meta">
+                           <div class="badge badge-outline">HD</div>
+                           <div class="duration">
+                               <ion-icon name="time-outline"></ion-icon>
+                               <time datetime="PT137M">137 min</time>
+                           </div>
+                           <div class="rating">
+                               <ion-icon name="star"></ion-icon>
+                               <data>@m.Rate</data>
+                           </div>
+                       </div>
+
+                   </div>
+               </li>
+            }
+            </ul>
+    </div>
+</section>
+
+<!-- //w3l-medile-movies-grids -->

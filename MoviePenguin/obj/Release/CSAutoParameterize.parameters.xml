@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL8006.site4now.net,1433;Initial Catalog=db_aa2680_qlphim;User Id=db_aa2680_qlphim_admin;Password=Eddylee7749@;integrated security=false;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minwang\\Downloads\\Moviewebproject\\MoviePenguin\\MoviePenguin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Movie-Web.config Connection String" description="Movie Connection String used in web.config by the application to access the database." defaultValue="Data Source=SQL8006.site4now.net,1433;Initial Catalog=db_aa2680_qlphim;User Id=db_aa2680_qlphim_admin;Password=Eddylee7749@;integrated security=false;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minwang\\Downloads\\Moviewebproject\\MoviePenguin\\MoviePenguin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Movie']/@connectionString" />
+  </parameter>
+  <parameter name="MoviePenguin.Models.ApplicationDbContext-Web.config Connection String" description="MoviePenguin.Models.ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="MoviePenguin.Models.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minwang\\Downloads\\Moviewebproject\\MoviePenguin\\MoviePenguin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MoviePenguin.Models.ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="MoviePenguin.Models.TestDBContext-Web.config Connection String" description="MoviePenguin.Models.TestDBContext Connection String used in web.config by the application to access the database." defaultValue="MoviePenguin.Models.TestDBContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minwang\\Downloads\\Moviewebproject\\MoviePenguin\\MoviePenguin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MoviePenguin.Models.TestDBContext']/@connectionString" />
+  </parameter>
+</parameters>

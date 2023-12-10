@@ -1,0 +1,95 @@
+﻿@model MoviePenguin.Models.Movie
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<h1>Bạn có chắc muốn xóa phim này chứ</h1>
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <h4>Thể loại</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            <h4>Quốc Gia</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country1.Name)
+        </dd>
+
+        <dt>
+            <h4>Tên phim</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+       
+
+        <dt>
+            <h4>Diễn viên</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor)
+        </dd>
+
+       
+
+        <dt>
+            <h4>Tác giả</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Directors)
+        </dd>
+
+        <dt>
+            <h4>Ngày phát hành</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            <h4>Lượt xem</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Viewed)
+        </dd>
+
+        <dt>
+            <h4>Ngày tạo</h4>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

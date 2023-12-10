@@ -1,0 +1,254 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Slides = (List<MoviePenguin.Models.Slide>)ViewBag.Slides;
+    var listMovieNew = (List<MoviePenguin.Models.Movie>)ViewBag.listMovieNew;
+    var listMovieTop = (List<MoviePenguin.Models.Movie>)ViewBag.listMovieTop;
+    var listMoviePo = (List<MoviePenguin.Models.Movie>)ViewBag.listMoviePo;
+}
+
+
+
+@section slide{
+    <section class="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">Netflix</p>
+
+                <h1 class="h1 hero-title">
+                    Watching <strong>The Best</strong>, Movie & Series <strong> Streaming,  </strong> Platform.
+                </h1>
+
+                <div class="meta-wrapper">
+
+                    <div class="badge-wrapper">
+                        <div class="badge badge-fill">Vietsub</div>
+
+                        <div class="badge badge-outline">Full HD - 4K </div>
+                    </div>
+
+                
+
+                    <div class="date-time">
+
+                        <div>
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <ion-icon name="time-outline"></ion-icon>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary">
+                    <ion-icon name="play"></ion-icon>
+
+                    <span>Watch Now</span>
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+}
+
+
+
+
+<section class="upcoming">
+    <div class="container">
+
+        <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+                <p class="section-subtitle">Online Streaming</p>
+
+                <h2 class="h2 section-title">Newly Updates</h2>
+            </div>
+            <ul class="filter-list">
+
+                <li>
+                    <button class="filter-btn">Movies</button>
+                </li>
+
+                <li>
+                    <button class="filter-btn">TV Shows</button>
+                </li>
+
+                <li>
+                    <button class="filter-btn">Anime</button>
+                </li>
+
+            </ul>
+        </div>
+
+        <ul class="movies-list  has-scrollbar">
+            @foreach (var s  in listMovieNew ) 
+            {
+
+                <li>
+                    <div class="movie-card">
+                        <a href="/Movie/MovieDetail/@s.MovieID">
+                            <figure class="card-banner">
+                                <img src="~/@s.Image" title="album-name" alt="The Northman movie poster">
+                            </figure>
+                        </a>
+                        <div class="title-wrapper">
+                            <a href="/Movie/MovieDetail/@s.MovieID">
+                                <h3 class="card-title">@s.Name</h3>
+                            </a>
+                            <p>@s.Year</p>
+                        </div>
+                        <div class="card-meta">
+                            <div class="badge badge-outline">HD</div>
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                <time datetime="PT137M">137 min</time>
+                            </div>
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+                                <data>@s.Rate</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="top-rated">
+    <div class="container">
+
+        <p class="section-subtitle">Online Streaming</p>
+
+        <h2 class="h2 section-title">TOP Rates</h2>
+
+        <ul class="filter-list">
+
+            <li>
+                <button class="filter-btn">Horror</button>
+            </li>
+
+            <li>
+                <button class="filter-btn">Sports</button>
+            </li>
+
+            <li>
+                <button class="filter-btn">Music</button>
+            </li>
+
+            <li>
+                <button class="filter-btn">Discover</button>
+            </li>
+
+        </ul>
+
+        <ul class="movies-list">
+            @foreach (var m in listMovieTop)
+            {
+                <li>
+                    <div class="movie-card">
+                        <a href="/Movie/MovieDetail/@m.MovieID">
+                            <figure class="card-banner">
+                                <img src="~/@m.Image" alt="Sonic the Hedgehog 2 movie poster">
+                            </figure>
+                        </a>
+
+                        <div class="title-wrapper">
+                            <a href="/Movie/MovieDetail/@m.MovieID">
+                                <h3 class="card-title">@m.Name</h3>
+                            </a>
+
+                            <time datetime="2022">@m.Year</time>
+                        </div>
+
+                        <div class="card-meta">
+                            <div class="badge badge-outline">2K</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                <time datetime="PT122M">122 min</time>
+                            </div>
+
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+
+                                <data>@m.Rate</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            }
+
+        </ul>
+    </div>
+</section>
+<section class="tv-series">
+    <div class="container">
+
+        <p class="section-subtitle">Popular Moives</p>
+
+        <h2 class="h2 section-title">Popular All The Times</h2>
+
+        <ul class="movies-list">
+            @foreach (var po in listMoviePo)
+            {
+                <li>
+                    <div class="movie-card">
+
+                        <a href="~/Movie/MovieDetail/@po.MovieID">
+                            <figure class="card-banner">
+                                <img src="~/@po.Image" alt="Moon Knight movie poster">
+                            </figure>
+                        </a>
+                        <div class="title-wrapper">
+                            <a href="~/Movie/MovieDetail/@po.MovieID">
+                                <h3 class="card-title">@po.Name</h3>
+                            </a>
+                            <time datetime="2023">@po.Year</time>
+                        </div>
+                        <div class="card-meta">
+                            <div class="badge badge-outline">2K</div>
+
+                            <div class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                <time datetime="PT47M">47 min</time>
+                            </div>
+
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+
+                                <data>@po.Rate</data>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+</section>
+
+
+
+
+       
+
+<!-- //Latest-tv-series -->

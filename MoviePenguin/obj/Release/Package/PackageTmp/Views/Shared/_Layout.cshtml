@@ -1,0 +1,241 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Netflix Rep</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/assets/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/assets/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/assets/web/css/contactstyle.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/assets/web/css/faqstyle.css" type="text/css" media="all" />
+    <link href="~/assets/web/css/single.css" rel='stylesheet' type='text/css' />
+    <link href="~/assets/web/css/medile.css" rel='stylesheet' type='text/css' />
+    <link hrel="stylesheet" href="~/assets/web/news-css/news.css" type="text/css" media="all" />
+    <!-- //banner-bottom-plugin -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/assets/web/news-css/site.css">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body id="top">
+    <!-- header -->
+    <header class="header" data-header>
+        <div class="container">
+            <div class="overlay" data-overlay></div>
+            <div class="w3layouts_logo">
+                <a href="/Home/Index"><h1>Netflix<span>and Chill</span></h1></a>
+            </div>
+            <div class="header-actions">
+                <div class="SearchBox">
+                    <form name="timkiem" action="/Home/Search">
+                        <input type="text" name="searchKey" class="SearchBox-input" placeholder="Nhập tên phim">
+                        <button class="SearchBox-button">
+                            <i class="SearchBox-icon  material-icons">search</i>
+                        </button>
+                    </form>
+
+                </div>
+                <div class="lang-wrapper">
+                    <label for="language">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </label>
+
+                    <select name="language" id="language">
+                        <option value="tu">VN</option>
+                        <option value="en">EN</option>
+                      
+                    </select>
+                </div>
+
+                 @Html.Partial("_LoginPartial")
+               
+            </div>
+
+            <button class="menu-open-btn" data-menu-open-btn>
+                <ion-icon name="reorder-two"></ion-icon>
+            </button>
+
+            <nav class="navbar" data-navbar>
+
+                <div class="navbar-top">
+
+                    <a href="./index.html" class="logo">
+                        <img src="~/assets/web/images/logo.svg" alt="Filmlane logo">
+                    </a>
+                    <button class="menu-close-btn" data-menu-close-btn>
+                        <ion-icon name="close-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+
+
+                    <li>
+                        @{ Html.RenderAction("Category", "Movie");}
+                    </li>
+                    <li>
+                        @{ Html.RenderAction("Country", "Movie");}
+                    </li>
+
+                    <li>
+                        <a class="navbar-link" href="~/Views/Home/Contact">Contact</> </a>
+                    <li />
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <article>
+        @RenderSection("slide", required: false)
+        @RenderBody()
+        <section class="cta">
+            <div class="container">
+
+                <form action="" class="cta-form">
+                    <input type="email" name="email" required placeholder="Enter your email" class="email-field">
+
+                    <button type="submit" class="cta-form-btn">Get started</button>
+                </form>
+
+            </div>
+        </section>
+
+    </article>
+    <!-- footer -->
+    <footer class="footer">
+
+        <div class="footer-top">
+            <div class="container">
+
+                <div class="footer-brand-wrapper">
+
+                    <div class="w3layouts_logo">
+                        <a href="/Home/Index"><h1><span>NetflixandChill</span></h1></a>
+                    </div>
+
+                    <ul class="footer-list">
+
+                        <li>
+                            <a href="./index.html" class="footer-link">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">Movie</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">TV Show</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">Web Series</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">Pricing</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="quicklink-wrapper">
+
+                    <ul class="quicklink-list">
+
+                        <li>
+                            <a href="#" class="quicklink-link">Faq</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="quicklink-link">Help center</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="quicklink-link">Terms of use</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="quicklink-link">Privacy</a>
+                        </li>
+
+                    </ul>
+
+                    <ul class="social-list">
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-pinterest"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">
+                    &copy; 2022 <a href="#">Netflix Inc</a>. All Rights Reserved
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <!--
+      - #GO TO TOP
+    -->
+    <a href="#top" class="go-top" data-go-top>
+        <ion-icon name="chevron-up"></ion-icon>
+    </a>
+    <!--
+      - custom js link
+    -->
+    <script src="~/assets/web/js/moive.js"></script>
+
+    <!--
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+
+
+

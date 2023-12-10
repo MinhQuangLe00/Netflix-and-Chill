@@ -1,0 +1,12 @@
+﻿@model List<MoviePenguin.Models.Country>
+<li>
+    <div class="dropdown">
+        <button class="dropbtn">Country</button>
+        <ul class="dropdown-content">
+            @foreach (var item in Model)
+            {
+                <li><a href="/Movie/CountryPage/@item.CountryID">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+</li>
